@@ -1,6 +1,16 @@
 <script setup lang="ts">
-let a = '你好啊'
-console.log(a)
+import {reqLogin} from "@/api/user/index"
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  reqLogin({
+    username: 'admin',
+    password: '111111'
+  }).then(res => {
+    console.log(res);
+    
+  })
+})
 </script>
 
 <template>
